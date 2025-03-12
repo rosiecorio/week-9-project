@@ -21,7 +21,7 @@ export default async function Page() {
 
     const userInfo = (await db.query(`SELECT * FROM users WHERE clerk_id=$1`, [userId])).rows[0]
 
-    const userPosts = (await db.query(`SELECT user_id, content, img_url FROM posts JOIN users ON posts.user_id = users.id`)).rows
+    const userPosts = (await db.query(`SELECT posts.id, posts.user_id, posts.content, posts.img_url FROM posts`)).rows
 
     const userPostsByNew = userPosts.reverse()
     console.log(userPostsByNew)

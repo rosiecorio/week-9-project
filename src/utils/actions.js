@@ -8,6 +8,6 @@ const db = new pg.Pool({
 })
 
 export async function handlePostDelete(id) {
-    await db.query(`DELETE FROM posts WHERE id = ${id}`).rows
+    await db.query(`DELETE FROM posts WHERE id = $1`, [id])
     revalidatePath("/profile")
 }
