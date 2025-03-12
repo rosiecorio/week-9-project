@@ -19,7 +19,7 @@ export default function Home() {
         </div>
       </section>
       <section className="flex flex-col items-center">
-        <p>Lets get buzzy</p>
+        <p>Dont have an account? Sign up today!</p>
         <Link href="/sign-in" className="border-white border-2 p-1 mt-2 rounded-lg text-amber-400">Sign up</Link>
       </section>
     </div>
