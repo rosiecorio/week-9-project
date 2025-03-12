@@ -64,5 +64,7 @@ export default async function Page() {
     )
 }
 
-//profile picture, bio, full name, create new post, previous posts made by this user
+//profile picture, bio, full name, create new post, previous posts made by this user -- DONE
+//make bio info form show when user first loads into the page?
+
 //bio will need to start out blank, and potentially be edited.
