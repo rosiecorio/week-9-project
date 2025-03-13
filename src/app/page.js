@@ -27,12 +27,8 @@ export default function Home() {
   );
 }
 
-// add radix component - and potentially motion component?
 // add not-found.js function
-// add post form to timeline page
-// style error page
-// style timeline better
-// figure out how to display users profile picture when viewing from different account
+// style timeline better -- GETTING THERE
 // add like function - add liked posts option to timeline?
 // allow users to edit their bio and username
 // add bee cursor?

@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@theme {
+    --breakpoint-xs: 30rem;
+    --breakpoint-2xl: 100rem;
+    --breakpoint-3xl: 120rem;
+  }

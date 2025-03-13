@@ -27,10 +27,10 @@ export default async function Page() {
     
 
     const userPosts = (await db.query(`SELECT posts.content, posts.img_url, users.clerk_id FROM posts JOIN users ON posts.user_id = users.id WHERE clerk_id = $1`, [userId])).rows
-    console.log(userPosts)
+    // console.log(userPosts)
 
     const userPostsByNew = userPosts.reverse()
-    console.log(userPostsByNew)
+    // console.log(userPostsByNew)
 
     return (
         <div>
