@@ -20,7 +20,7 @@ export default function NewPost({id}) {
     }
     
     return (
-        <form className="flex flex-col w-[30vw] p-3  rounded-2xl text-black bg-amber-400 shadow-yellow-700 shadow-lg" action={handleSubmit}>
+        <form className="flex flex-col w-[30vw] p-3  rounded-2xl text-black bg-amber-400 opacity-85 shadow-zinc-700 shadow-md" action={handleSubmit}>
             <Label.Root
 			className="text-[15px] font-medium leading-[35px]"
 			htmlFor="img_url"

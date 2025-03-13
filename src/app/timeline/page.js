@@ -2,6 +2,7 @@ import pg from "pg"
 import Image from "next/image"
 import NewPost from "@/components/NewPost"
 import Link from "next/link"
+import { auth } from "@clerk/nextjs/server"
 
 import { ScrollArea } from "radix-ui";
 
@@ -11,16 +12,17 @@ export default async function Page() {
         connectionString: process.env.DB_CONN
     })
 
-    const TAGS = (await db.query(`SELECT posts.id, posts.user_id, posts.content, posts.img_url, users.username, users.clerk_id FROM posts JOIN users ON posts.user_id = users.id;`)).rows
-
-
-
     const allPosts = (await db.query(`SELECT posts.id, posts.user_id, posts.content, posts.img_url, users.username, users.clerk_id FROM posts JOIN users ON posts.user_id = users.id;`)).rows
     const allPostsByNew = allPosts.reverse()
 
+    const {userId} = await auth()
+    // const users = await db.query(`SELECT * FROM users WHERE id = $1`, [userId])
+    // console.log(users)
+
+
     return (
-        <div className="flex flex-col items-center bg-amber-600 pb-10">
-            <h2 className="text-4xl font-medium mt-5 mb-5 text-black">Timeline Page</h2>
+        <div className="flex flex-col items-center bg-black pb-10">
+            <h2 className="text-4xl font-medium font-serif underline mt-5 mb-5 text-amber-500">Timeline</h2>
             <ScrollArea.Root className="w-[60%] h-[60vh] overflow-hidden rounded bg-none">
                 <ScrollArea.Viewport className="size-full rounded-2xl">
                     <div className="flex flex-col items-center gap-5 pt-5 pb-5">
