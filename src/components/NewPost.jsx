@@ -19,7 +19,7 @@ export default function NewPost({id}) {
     }
     
     return (
-        <form className="flex flex-col w-[30vw] p-3 border-black border-2 rounded-2xl text-black bg-amber-400 shadow-amber-700 shadow-lg" action={handleSubmit}>
+        <form className="flex flex-col w-[30vw] p-3  rounded-2xl text-black bg-amber-400 shadow-yellow-700 shadow-lg" action={handleSubmit}>
             <label className="underline" htmlFor="img_url">Image URL:</label>
             <input className="text-black rounded-xl p-1 bg-slate-400 bg-opacity-30" id="img_url" name="img_url" placeholder="beepic.jpg"/>
             <label className="underline" htmlFor="content">Create New Post</label>
