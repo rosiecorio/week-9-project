@@ -1,4 +1,5 @@
 import DeletePost from "@/components/DeletePost"
+import EditComment from "@/components/EditComment"
 import EditUser from "@/components/EditUser"
 import NewPost from "@/components/NewPost"
 import NewUser from "@/components/NewUser"
@@ -65,8 +66,7 @@ export default async function Page() {
                                 <p>{userInfo.bio}</p>
                                 <EditUser />                    
                             </div>                
-                        </section>
-                        {/* <UserFormButton /> */}                                
+                        </section>                                                        
                     </div>
                     <section className="flex flex-col items-center justify-center gap-5 h-fit mt-5">                     
                         <NewPost id={userInfo.id} />                                                 
@@ -82,7 +82,7 @@ export default async function Page() {
                                         <DeletePost id={post.id}/>
                                     </div>                                
                                     <p>{post.content}</p>
-                                    <p>Edit</p>
+                                    <EditComment />
                                 </div>                                                                                                              
                             </div>                                     
                         ))}

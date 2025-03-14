@@ -27,6 +27,6 @@ export default function Home() {
   );
 }
 
-// add not-found.js function
 // add like function - add liked posts option to timeline?
+// add edit user option to a popover radix component?
 // add bee cursor? -- TRYING
