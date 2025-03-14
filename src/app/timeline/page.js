@@ -2,7 +2,6 @@ import pg from "pg"
 import Image from "next/image"
 import NewPost from "@/components/NewPost"
 import Link from "next/link"
-import { auth } from "@clerk/nextjs/server"
 
 import { ScrollArea } from "radix-ui";
 
@@ -15,19 +14,15 @@ export default async function Page() {
     const allPosts = (await db.query(`SELECT posts.id, posts.user_id, posts.content, posts.img_url, users.username, users.clerk_id FROM posts JOIN users ON posts.user_id = users.id;`)).rows
     const allPostsByNew = allPosts.reverse()
 
-    const {userId} = await auth()
-    // const users = await db.query(`SELECT * FROM users WHERE id = $1`, [userId])
-    // console.log(users)
-
 
     return (
         <div className="flex flex-col items-center bg-black pb-10">
-            <h2 className="text-4xl font-medium font-serif underline mt-5 mb-5 text-amber-500">Timeline</h2>
+            <h2 className="text-4xl font-medium font-serif underline mt-5 mb-5 text-amber-400">Timeline</h2>
             <ScrollArea.Root className="w-[60%] h-[60vh] overflow-hidden rounded bg-none">
                 <ScrollArea.Viewport className="size-full rounded-2xl">
                     <div className="flex flex-col items-center gap-5 pt-5 pb-5">
                         {allPostsByNew.map((post) => (
-                            <section className="flex flex-row w-[95%] gap-5 bg-amber-400 opacity-85 text-black shadow-md shadow-yellow-700 rounded-lg p-5" key={post.id}>                        
+                            <section className="flex flex-row w-[95%] gap-5 bg-gradient-to-tr from-amber-500 via-amber-500 to-amber-400 text-black shadow-md shadow-yellow-700 rounded-lg p-5" key={post.id}>                        
                                 <Image src={post.img_url} height={230} width={300} alt="a picture of a bee"/>
                                 <div>
                                     <Link href={`/profile/${post.clerk_id}`}><p className="underline font-medium">{post.username}</p></Link>

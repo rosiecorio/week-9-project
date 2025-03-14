@@ -20,21 +20,21 @@ export default function NewPost({id}) {
     }
     
     return (
-        <form className="flex flex-col w-[30vw] p-3  rounded-2xl text-black bg-amber-400 opacity-85 shadow-zinc-700 shadow-md" action={handleSubmit}>
+        <form className="flex flex-col w-[30vw] p-3 rounded-2xl text-black bg-amber-400 shadow-zinc-700 shadow-md" action={handleSubmit}>
             <Label.Root
 			className="text-[15px] font-medium leading-[35px]"
 			htmlFor="img_url"
 		>
 			Image URL:
 		</Label.Root>
-            <input className="text-black rounded-xl p-1 bg-slate-400 bg-opacity-30" id="img_url" name="img_url" placeholder="beepic.jpg"/>
+            <input className="text-black rounded-xl p-1 bg-amber-500 bg-opacity-30" id="img_url" name="img_url" placeholder="beepic.jpg"/>
             <Label.Root
 			className="text-[15px] font-medium leading-[35px]"
 			htmlFor="firstName"
 		>
 			Content:
 		</Label.Root>
-            <textarea className="text-black h-[10vh] rounded-xl p-2 bg-slate-400 bg-opacity-30" id="content" name="content" placeholder="What's on your mind?" ></textarea>
+            <textarea className="text-black h-[10vh] rounded-xl p-2 bg-amber-500 bg-opacity-30" id="content" name="content" placeholder="What's on your mind?" ></textarea>
             <button className="hover:underline hover:bg-amber-500 p-1 mt-1 hover:text-black rounded-xl w-fit self-center" type="submit">Post!</button>
         </form>
     )

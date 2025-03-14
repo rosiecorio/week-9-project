@@ -7,3 +7,7 @@
     --breakpoint-2xl: 100rem;
     --breakpoint-3xl: 120rem;
   }
+
+.profileContainer {
+  background-image: url(/public/beewallpaper.jpg);
+}

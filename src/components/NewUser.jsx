@@ -1,4 +1,3 @@
-import { Content } from "next/font/google"
 import pg from "pg"
 import { revalidatePath } from "next/cache"
 import { auth } from "@clerk/nextjs/server"

@@ -28,7 +28,5 @@ export default function Home() {
 }
 
 // add not-found.js function
-// style timeline better -- GETTING THERE
 // add like function - add liked posts option to timeline?
-// allow users to edit their bio and username
-// add bee cursor?
+// add bee cursor? -- TRYING

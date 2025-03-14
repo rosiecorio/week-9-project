@@ -33,7 +33,7 @@ export default function RootLayout({children}){
     <ClerkProvider>
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}>
-          <header className="flex justify-end items-center p-4 gap-4 h-[8vh] bg-gradient-to-t from-amber-900 to-amber-700 text-white z-0">
+          <header className="flex justify-end items-center p-4 gap-4 h-[8vh] bg-gradient-to-t from-amber-600 to-amber-500 text-white z-0">
             <NavBar />
             <SignedOut>
               <SignInButton />

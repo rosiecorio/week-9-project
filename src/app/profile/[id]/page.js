@@ -1,11 +1,8 @@
-import { auth } from "@clerk/nextjs/server"
 import pg from "pg"
 import Image from "next/image"
 import { clerkClient } from "@clerk/nextjs/server"
 
 export default async function Page({params}) {
-
-    const {userId} = await auth()
 
     // await clerk.user.setProfileImage({profileImage})
 
@@ -21,17 +18,16 @@ export default async function Page({params}) {
 
     const client = await clerkClient()
     const clerkUser = await client.users.getUser(user.clerk_id)
-    console.log(clerkUser)
+    // console.log(clerkUser)
 
     return (
         <div className="flex flex-col items-center">
             <h2 className="text-4xl font-medium mt-5 text-amber-400">{user.username}s Profile</h2>
-            <div className="flex flex-row mt-10 w-[40vw] justify-around bg-amber-600 rounded-xl p-5 shadow-md shadow-yellow-700">
-                <section className="h-[50vh] p-5 flex flex-col items-center">
-                <Image className={"rounded-full"} src={clerkUser.imageUrl} height={180} width={180} alt="Profile picture"/>
+            <div className="flex flex-row mt-10 w-[40vw] h-fit justify-around bg-gradient-to-t from-amber-600 to-amber-500 rounded-xl p-5 shadow-md shadow-yellow-700">
+                <section className="h-[50%] p-5 flex flex-col items-center gap-5">
+                    <Image className="rounded-full shadow-black shadow-md" src={clerkUser.imageUrl} height={180} width={180} alt="Profile picture"/>
                     <p className="text-black text-2xl font-medium self-center mb-3">{user.username}s posts: {userPosts.length}</p>
-                    <div className="flex flex-col gap-3 border-2 border-black rounded-lg p-3 text-lg text-black bg-amber-400 shadow-amber-700 shadow-lg">
-                        <p>{user.username}</p>
+                    <div className=" w-[80%] border-2 border-black rounded-lg p-3 text-lg text-black bg-amber-400 shadow-amber-700 shadow-lg">
                         <p>{user.bio}</p>
                     </div>
                 </section>

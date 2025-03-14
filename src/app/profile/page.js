@@ -1,8 +1,7 @@
-// import UserFormButton from "@/components/UserFormButton"
 import DeletePost from "@/components/DeletePost"
+import EditUser from "@/components/EditUser"
 import NewPost from "@/components/NewPost"
 import NewUser from "@/components/NewUser"
-// import UserForm from "@/utils/UserForm"
 import { auth } from "@clerk/nextjs/server"
 import { currentUser } from "@clerk/nextjs/server"
 import Image from "next/image"
@@ -34,7 +33,7 @@ export default async function Page() {
 
     return (
         <div>
-            {isUser.rowCount == 0 ? 
+            {isUser.rowCount == 0 ?
                 <div className="flex flex-col items-center">
                     <h2 className="text-4xl font-medium mt-5 text-amber-400">Your Profile</h2>
                     <div className="flex flex-row mt-10 w-[90vw] justify-around bg-amber-600 rounded-xl p-5 shadow-md shadow-yellow-700">            
@@ -44,7 +43,7 @@ export default async function Page() {
                             <div className="flex flex-col gap-3 border-2 border-black rounded-lg p-3 text-lg text-black bg-amber-400 shadow-amber-700 shadow-lg">
                                 <p>{user.firstName} {user.lastName}</p>                    
                                 <p>Your bio will go here!</p>
-                                <button className="bg-black text-white hover:bg-white rounded-xl">edit</button>                    
+                                <button className="bg-black text-white hover:bg-white hover:text-black rounded-xl">edit</button>                    
                             </div>                
                         </section>
                         <NewUser />
@@ -56,15 +55,15 @@ export default async function Page() {
                 </div>
                 : 
                 <div className="flex flex-col items-center">
-                    <h2 className="text-4xl font-medium mt-5 text-amber-400">{userInfo.username}s Profile</h2>
-                    <div className="flex flex-row mt-10 w-[40%] h- justify-around bg-amber-600 rounded-xl p-5 shadow-md shadow-yellow-700">            
+                    <h2 className="text-4xl font-medium mt-5 text-amber-400">Your Profile</h2>
+                    <div className="flex flex-row mt-10 w-[40%] bg-gradient-to-t from-amber-600 to-amber-500 justify-around rounded-xl p-5 shadow-md shadow-yellow-700">            
                         <section className="p-5 flex flex-col items-center">
                             <Image className="m-5 rounded-full shadow-black shadow-md" src={user.imageUrl} height={200} width={200} alt="Your profile picture"/>
                             <p className="text-black text-2xl font-medium self-center mb-3">Posts: {userPosts.length}</p>
                             <div className="flex flex-col w-[30vw] gap-3 border-2 border-black rounded-lg p-3 text-lg text-black bg-amber-400 shadow-yellow-800 shadow-md">
                                 <p>{user.firstName} {user.lastName} {`(${userInfo.username})`}</p>                    
                                 <p>{userInfo.bio}</p>
-                                <button className=" self-center bg-black text-white hover:bg-white rounded-xl w-[40%]">edit</button>                    
+                                <EditUser />                    
                             </div>                
                         </section>
                         {/* <UserFormButton /> */}                                
@@ -83,6 +82,7 @@ export default async function Page() {
                                         <DeletePost id={post.id}/>
                                     </div>                                
                                     <p>{post.content}</p>
+                                    <p>Edit</p>
                                 </div>                                                                                                              
                             </div>                                     
                         ))}
