@@ -18,7 +18,7 @@ export default async function Page() {
     return (
         <div className="flex flex-col items-center bg-black pb-10">
             <h2 className="text-4xl font-medium font-serif underline mt-5 mb-5 text-amber-400">Timeline</h2>
-            <ScrollArea.Root className="w-[60%] h-[60vh] overflow-hidden rounded bg-none">
+            <ScrollArea.Root className="w-[80%] h-[60vh] overflow-hidden rounded bg-none">
                 <ScrollArea.Viewport className="size-full rounded-2xl">
                     <div className="flex flex-col items-center gap-5 pt-5 pb-5">
                         {allPostsByNew.map((post) => (
