@@ -13,4 +13,6 @@ I've also added small customisations for the user for example, when viewing thei
 I would have liked to add the ability for users to like posts in their timeline, however I ran out of time.
 When i continue with this project in my own time, I will also change the timeline layout so that the 'new post' form is a modal accesible via a button click.
 
+One of my other goals was to add a custom Bee cursor for the page, but I couldn't get it to display.
+
 I'd also like to fine tune the styling of the page as it feels a bit basic at the moment.
