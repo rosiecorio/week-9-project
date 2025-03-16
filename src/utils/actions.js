@@ -21,3 +21,12 @@ export async function handleUserEdit(formData) {
     revalidatePath("/profile")
 }
 
+export async function handleCommentEdit(id, formData) {
+    'use server'    
+    const {img_url, content} = Object.fromEntries(formData)
+    console.log(id)
+    console.log(img_url, content)
+    await db.query(`UPDATE posts SET img_url = $1, content = $2 WHERE posts.id = $3`, [img_url, content, id])    
+    revalidatePath("/profile")
+    revalidatePath("/timeline")
+}
