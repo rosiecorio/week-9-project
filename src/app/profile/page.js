@@ -26,7 +26,7 @@ export default async function Page() {
 
     
 
-    const userPosts = (await db.query(`SELECT posts.content, posts.img_url, users.clerk_id FROM posts JOIN users ON posts.user_id = users.id WHERE clerk_id = $1`, [userId])).rows
+    const userPosts = (await db.query(`SELECT posts.content, posts.id, posts.img_url, users.clerk_id FROM posts JOIN users ON posts.user_id = users.id WHERE clerk_id = $1`, [userId])).rows
     // console.log(userPosts)
 
     const userPostsByNew = userPosts.reverse()
@@ -82,7 +82,7 @@ export default async function Page() {
                                         <DeletePost id={post.id}/>
                                     </div>                                
                                     <p>{post.content}</p>
-                                    <EditComment />
+                                    <EditComment id={post.id}/>
                                 </div>                                                                                                              
                             </div>                                     
                         ))}
